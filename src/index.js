@@ -1,6 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore, applyMiddleware} from 'redux'; //allows us to create store, incoroporates thunk with store
+import thunk from 'redux-thunk'; //allows async requests
+import { Provider } from 'react-redux'; //Any component wrapped in Provider will have access to Redux store
+
 import App from './App';
+
+
+//set up store
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
