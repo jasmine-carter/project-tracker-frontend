@@ -9,10 +9,12 @@ import App from './App';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+//reducer responsible for receiving actions, interpreting them, and adjusting store based on them
+
 
 
 ReactDOM.render(
-  <Provider >
+  <Provider store={store} >
   <App />,
   </Provider>
   document.getElementById('root'));
