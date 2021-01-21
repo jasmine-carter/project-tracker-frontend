@@ -4,6 +4,11 @@ import ProjectList from '../components/projects/ProjectList'
 import ProjectInput from '../components/projects/ProjectInput'
 
 class ProjectsContainer extends Component {
+
+componentDidMount(){
+
+}
+
   render() {
     return(
       <div>
@@ -14,6 +19,15 @@ class ProjectsContainer extends Component {
   }
 }
 
-const mapStateToProps = state ({projects: state.projects})
+const mapStateToProps = state => {
+    return {
+      projects: state.accounts
+    }
+}
 
-export default connect(mapStateToProps)(ProjectsContainer);
+const mapDispatchToProps = dispatch => ({
+  addProject: text => dispatch({type: 'ADD_PROJECT', text}),
+  deleteProject: id => dispatch({type: 'DELETE_PROJECT', id})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectsContainer);
