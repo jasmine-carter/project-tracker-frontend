@@ -1,5 +1,5 @@
 export function addProject(data) {
-    debugger;
+  //  debugger;
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/projects', {
       headers: {
