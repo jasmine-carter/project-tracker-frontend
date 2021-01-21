@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Project = (props) => {
-  console.log(props)
+
+class Project extends Component {
+
+
+  handleOnClick = () => {
+    this.props.deleteProject(this.props.project.id)
+  }
+render() {
+  const { project } = this.props;
 
   return (
     <div>
-    <h3>test </h3>
+      <li >
+      {project.name} - {project.description}
+      <button> X </button>
+      </li>
     </div>
-  )
-
+    )
+  }
 }
+
+export default Project;
