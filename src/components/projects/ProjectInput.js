@@ -3,26 +3,42 @@ import React, { Component } from 'react';
 class ProjectsContainer extends Component {
 
   state = {
-    project: ''
+    name: '',
+    description: ''
   }
+
+  handleOnChange = (event) => {
+      this.setState({
+        [event.target.name]: event.target.value
+      })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+  }
+
 
   render() {
     return (
       <div>
         ProjectInput
-        <form>
+        <form onSubmit={(event) =>this.handleSubmit(event)}>
           <label>Project Name:</label> {'  '}
           <input
           type="text"
-          name="project_name"
-        //  value={this.state.text}
-          placeholder="Project Name"/><br/>
+          name="name"
+          value={this.state.name}
+          placeholder="Project Name"
+          onChange={this.handleOnChange}/><br/>
           <label>Project Description:</label>{'  '}
           <input
           type="text"
-          name="project_description"
+          value={this.state.description}
+          name="description"
           placeholder="Project Description"
           maxLength="200"
+          onChange={this.handleOnChange}
           />
           <br/>
           <br/>
