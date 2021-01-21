@@ -7,14 +7,13 @@ import {fetchProjects} from '../actions/fetchProjects'
 class ProjectsContainer extends Component {
 
 componentDidMount(){
-  fetchProjects()
-  console.log(this.props)
+  this.props.fetchProjects()
 }
 
   render() {
     return(
       <div>
-        <ProjectInput />
+        <ProjectInput /><br/><br/>
         <ProjectList projects={this.props.projects} />
       </div>
     )
