@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
-class ProjectsContainer extends Component {
+import {connect} from 'react-redux'
+import {addProject} from '../actions/addProject'
+class ProjectInput extends Component {
 
   state = {
     name: '',
@@ -16,6 +17,7 @@ class ProjectsContainer extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
+
   }
 
 
@@ -26,25 +28,25 @@ class ProjectsContainer extends Component {
         <form onSubmit={(event) =>this.handleSubmit(event)}>
           <label>Project Name:</label> {'  '}
           <input
-          type="text"
-          name="name"
-          value={this.state.name}
-          placeholder="Project Name"
-          onChange={this.handleOnChange}/><br/>
+            type="text"
+            name="name"
+            value={this.state.name}
+            placeholder="Project Name"
+            onChange={this.handleOnChange}/><br/>
           <label>Project Description:</label>{'  '}
           <input
-          type="text"
-          value={this.state.description}
-          name="description"
-          placeholder="Project Description"
-          maxLength="200"
-          onChange={this.handleOnChange}
+            type="text"
+            value={this.state.description}
+            name="description"
+            placeholder="Project Description"
+            maxLength="200"
+            onChange={this.handleOnChange}
           />
           <br/>
           <br/>
           <input
-          type="submit"
-          value="Create Project"/>
+            type="submit"
+            value="Create Project"/>
         </form>
       </div>
     )
@@ -52,4 +54,4 @@ class ProjectsContainer extends Component {
 
 }
 
-export default ProjectsContainer;
+export default connect(null, {addProject})(ProjectInput);
