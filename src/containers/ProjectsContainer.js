@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import ProjectList from '../components/projects/ProjectList'
 import ProjectInput from '../components/projects/ProjectInput'
 import {fetchProjects} from '../actions/fetchProjects'
+import { Route } from 'react-router-dom'
 
 class ProjectsContainer extends Component {
 
@@ -13,8 +14,8 @@ componentDidMount(){
   render() {
     return(
       <div>
-        <ProjectInput /><br/><br/>
-        <ProjectList projects={this.props.projects} />
+        <Route path='/projects/new' component={ProjectInput} />
+        <Route exact path='/projects' render={() => <ProjectList projects={this.props.projects}/>}/>
       </div>
     )
   }
