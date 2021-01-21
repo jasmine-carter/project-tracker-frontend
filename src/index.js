@@ -4,6 +4,7 @@ import {createStore, applyMiddleware, compose} from 'redux'; //allows us to crea
 import thunk from 'redux-thunk'; //allows async requests
 import { Provider } from 'react-redux'; //Any component wrapped in Provider will have access to Redux store
 import projectReducer from './reducers/projectReducer'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 
 import App from './App';
@@ -17,7 +18,9 @@ let store = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store} >
-  <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root'));
 
