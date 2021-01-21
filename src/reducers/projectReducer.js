@@ -1,22 +1,12 @@
 //responsible for updating the store as it pertains to projects
 
-export default function projectReducer(state = { projects: [], requesting: false}, action) {
+export default function projectReducer(state = { projects: []}, action) {
   switch (action.type) {
-    //case 'ADD_PROJECT':
-    case 'START_ADDING_PROJECTS_REQUEST':
-    return {
-      ...state,
-      projects: [...state.projects],
-      requesting: true
-    }
+    //case 'ADD_PROJECT'
 
-    case 'ADD_PROJECT':
+    case 'FETCH_PROJECTS':
     //debugger;
-    return {
-      ...state,
-      projects: action.projects,
-      requesting: false
-    }
+    return { projects: action.payload }
     //case 'DELETE_PROJECT':
     default:
     return state;

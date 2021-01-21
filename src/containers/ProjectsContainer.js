@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import ProjectList from '../components/projects/ProjectList'
 import ProjectInput from '../components/projects/ProjectInput'
+import {fetchProjects} from '../actions/fetchProjects'
 
 class ProjectsContainer extends Component {
 
 componentDidMount(){
-
+  fetchProjects()
+  console.log(this.props)
 }
 
   render() {
@@ -21,7 +23,7 @@ componentDidMount(){
 
 const mapStateToProps = state => {
     return {
-      projects: state.accounts
+      projects: state.projects
     }
 }
 
@@ -30,4 +32,4 @@ const mapDispatchToProps = dispatch => ({
   deleteProject: id => dispatch({type: 'DELETE_PROJECT', id})
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsContainer);
+export default connect(mapStateToProps, {fetchProjects})(ProjectsContainer);
