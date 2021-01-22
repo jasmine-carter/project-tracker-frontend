@@ -10,11 +10,16 @@ export default function projectReducer(state = { projects: []}, action) {
     //case 'DELETE_PROJECT'
 
     case 'ADD_PROJECT':
-  //  debugger;
+   // debugger;
     return {
     ...state,
     projects: [...state.projects, action.payload]
     }
+
+    case 'DELETE_PROJECT':
+    debugger;
+    const projects = state.projects.filter(project => project.id !== parseInt(action.payload))
+    return {...state, projects}
 
     default:
     return state;
