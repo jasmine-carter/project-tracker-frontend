@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom'
-
+import MaterialsContainer from '../../containers/MaterialsContainer'
 
 class Project extends Component {
 
@@ -28,7 +28,7 @@ render() {
       <h3 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h3>
       <p>{project ? project.description : null} {' '}</p>
       <button onClick={this.handleOnClick}> Delete Project? </button>
-      //list associated materials here
+      <MaterialsContainer />
     </div>
     )
   }
