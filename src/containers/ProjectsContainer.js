@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import ProjectList from '../components/projects/ProjectList'
 import ProjectInput from '../components/projects/ProjectInput'
 import {fetchProjects} from '../actions/fetchProjects'
+import {deleteProject} from '../actions/deleteProject'
 import { Route, Switch } from 'react-router-dom'
 import Project from '../components/projects/Project'
 
@@ -17,7 +18,7 @@ componentDidMount(){
       <div>
       <Switch> //chooses the first route that matches the path
         <Route path='/projects/new' component={ProjectInput} />
-        <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects}/>}/>
+        <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects} deleteProject={this.props.deleteProject}/>}/>
         <Route exact path='/projects' render={(routerProps) => <ProjectList projects={this.props.projects}/>}/>
       </Switch>
       </div>
@@ -36,4 +37,4 @@ const mapDispatchToProps = dispatch => ({
   deleteProject: id => dispatch({type: 'DELETE_PROJECT', id})
 })
 
-export default connect(mapStateToProps, {fetchProjects})(ProjectsContainer);
+export default connect(mapStateToProps, {fetchProjects, deleteProject})(ProjectsContainer);
