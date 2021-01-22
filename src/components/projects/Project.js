@@ -10,17 +10,15 @@ class Project extends Component {
 render() {
   //let project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
   //const { project } = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
-
-  let  { project } = {}
+  //debugger;
+  let  project = {}
   if (this.props.hasOwnProperty('match')) {
     project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
   }
   else {
-    project = this.props
+    project = this.props.project
   }
 
-
-  console.log(this.props.hasOwnProperty('match'))
   return (
     <div>
       <li >
