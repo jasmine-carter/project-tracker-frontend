@@ -10,6 +10,13 @@ export function addMaterial(data, project_id) {
       body: JSON.stringify(data)
     })
     .then(response => response.json())
-    .then(material => console.log(material))
+    .then(material =>{
+      if (material.error) {
+        alert(material.error)
+      } else {
+        dispatch({type: 'ADD_PROJECT_MATERIAL', payload: material})
+      }
+    }
+   )
   }
 }
