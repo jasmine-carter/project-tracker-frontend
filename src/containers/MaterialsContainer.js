@@ -7,13 +7,13 @@ import { connect } from 'react-redux'
 
 
 class MaterialsContainer extends React.Component {
-
   render() {
+      console.log(this.props.project.materials)
     return (
       <div>
         Materials Container!
         <MaterialInput project={this.props.project}/>
-        <MaterialsList materials={this.props.account && this.props.project.materials}/> //shorthand terniary if props project exists, then this.props.materials
+        <MaterialsList materials={this.props.project ? this.props.project.materials : this.props}/>
       </div>
     )
   }
