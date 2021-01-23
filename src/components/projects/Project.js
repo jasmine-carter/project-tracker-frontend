@@ -20,9 +20,9 @@ render() {
   return (
     <div>
       <h3 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h3>
-      <p>{project ? project.description : null} {' '}</p>
-      <p>Project Cost: ${project.cost} </p>
-      <p>Project Completed: {project.completed.toString()}</p>
+      <p>Project Details: {project ? project.description : null} {' '}<br/>
+      Project Cost: ${project.cost}<br/>
+      Project Completed: {project.completed.toString()}</p>
       <button onClick={this.handleOnClick}> Delete Project? </button>
       <MaterialsContainer project={project}/>
     </div>
