@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {deleteMaterial} from '../../actions/deleteMaterial'
 import {connect} from 'react-redux'
 
-class Material extends Component {
+const Material = (props) => {
 
-  handleOnClick = () => {
-    let materialId = this.props.material.id
-    let projectId = this.props.material.project_id
-    console.log(this.props)
-    this.props.deleteMaterial(projectId, materialId)
+  const handleOnClick = () => {
+    debugger;
+    let materialId = props.material.id
+    let projectId = props.material.project_id
+    props.deleteMaterial(projectId, materialId)
   }
+console.log(props)
+return (
+  <div key={props.material.id}>
+    <ul>
+    <li>{props.material.name}
+      <ul>
+        <li>Amount needed: {props.material.quantity}</li>
+        <li> Cost per Unit: ${props.material.cost}</li>
+        <li> Purchased?: {props.material.purchased.toString()} </li>
+        <button onClick={handleOnClick}> Delete Material </button>
+      </ul>
+    </li>
+    </ul>
+  </div>
+  )
 
-  render() {
-  let material = this.props.material
-      return (
-        <div key={material.id}>
-          <ul>
-          <li>{material.name}
-            <ul>
-              <li>Amount needed: {material.quantity}</li>
-              <li> Cost per Unit: ${material.cost}</li>
-              <li> Purchased?: {material.purchased.toString()} </li>
-              <button onClick={this.handleOnClick}> Delete Material </button>
-            </ul>
-          </li>
-          </ul>
-        </div>
-      )
-  }
 }
-
 export default connect(null,{deleteMaterial})(Material)
+//<button onClick={() => handleOnClick(props.material.id, props.material.project_id)}> Delete Material </button>
