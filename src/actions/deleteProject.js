@@ -5,7 +5,7 @@ export function deleteProject(projectId) {
       method: 'DELETE'
     })
     .then(response => response.json())
-    .then(project => dispatch({type: 'DELETE_PROJECT', payload: projectId}))
+    .then(project => dispatch({type: 'DELETE_PROJECT', payload: project}))
   }
 
 }
