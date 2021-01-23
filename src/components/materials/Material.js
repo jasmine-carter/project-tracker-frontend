@@ -4,25 +4,28 @@ import {connect} from 'react-redux'
 
 const Material = (props) => {
 
-  const handleOnClick = () => {
-    debugger;
+  const handleOnDelete = () => {
     let materialId = props.material.id
     let projectId = props.material.project_id
     props.deleteMaterial(projectId, materialId)
   }
+
+  const handleOnClick = () => {
+    console.log(props)
+  }
+
 console.log(props)
 return (
+  <div>
   <div key={props.material.id}>
-    <ul>
-    <li>{props.material.name}
+    <h4 class="materialName">{props.material.name}</h4>
       <ul>
         <li>Amount needed: {props.material.quantity}</li>
         <li> Cost per Unit: ${props.material.cost}</li>
-        <li> Purchased?: {props.material.purchased.toString()} </li>
-        <button onClick={handleOnClick}> Delete Material </button>
+        <li> Purchased?: {props.material.purchased.toString()} <button class="update-button">✓</button></li>
+        <button class="delete-button" onClick={handleOnDelete}> Delete Material </button>
       </ul>
-    </li>
-    </ul>
+  </div>
   </div>
   )
 
