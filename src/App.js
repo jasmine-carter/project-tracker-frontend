@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { fetchProjects } from './actions/fetchProjects'
 import ProjectsContainer from './containers/ProjectsContainer';
-
+import './App.css';
 
 class App extends React.Component {
 
