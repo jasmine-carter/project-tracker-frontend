@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom'
 import MaterialsContainer from '../../containers/MaterialsContainer'
 
 class Project extends Component {
@@ -14,15 +13,18 @@ render() {
   //let project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
   //const { project } = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
   //debugger
-  console.log(this.props)
+
+
   let project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
+
+  console.log(project.completed)
 
   return (
     <div>
       <h3 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h3>
       <p>{project ? project.description : null} {' '}</p>
-      <p>Project Cost: $ </p>
-
+      <p>Project Cost: ${project.cost} </p>
+      <p>Project Completed: {project.completed.toString()}</p>
       <button onClick={this.handleOnClick}> Delete Project? </button>
       <MaterialsContainer project={project}/>
     </div>
@@ -31,6 +33,7 @@ render() {
 }
 
 export default Project;
+///  <p>Project Cost: {project.cost} </p>
 
 /*let  project = {}
   if (this.props.hasOwnProperty('match')) {
