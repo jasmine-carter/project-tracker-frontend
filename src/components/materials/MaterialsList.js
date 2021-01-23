@@ -2,11 +2,10 @@ import React from 'react'
 
 //functional component
 const MaterialsList = (props) => {
-console.log(props)
 
   return (
     <div>
-      {props.materials.map(material =>
+      {props.materials && props.materials.map(material =>
         <div>
         <ul>
         <li key={material.id}> {material.name}
