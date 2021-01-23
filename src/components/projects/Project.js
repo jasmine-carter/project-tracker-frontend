@@ -17,8 +17,6 @@ render() {
 
   let project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
 
-  console.log(project.completed)
-
   return (
     <div>
       <h3 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h3>

@@ -24,13 +24,12 @@ export default function projectReducer(state = { projects: []}, action) {
     case 'ADD_PROJECT_MATERIAL':
     debugger;
       let projects1 = state.projects.map(project => {
-        if (project.id === action.payload.project_id) {
+        if (project.id === action.payload.id) {
           return action.payload
         } else {
           return project
         }
       })
-
     return {...state, projects: projects1}
 
     default:
