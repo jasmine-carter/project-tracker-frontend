@@ -1,25 +1,29 @@
 import React from 'react'
+import Material from './Material'
 
 //functional component
 const MaterialsList = (props) => {
+  console.log(props)
+
+  const {materials} = props
+  const projectMaterials = materials.map(material => {
+    return(
+      <div><Material
+      key={material.id}
+      material = {material}
+      />
+      </div>
+    )
+  })
+
   return (
     <div>
-      {props.materials && props.materials.map(material =>
-        <div key={material.id}>
-        <ul>
-        <li> {material.name}
-        <ul>
-          <li>Amount needed: {material.quantity}</li>
-          <li> Cost per Unit: ${material.cost}</li>
-          <li> Purchased?: {material.purchased.toString()} </li>
-        </ul>
-        </li>
-        </ul>
-        </div>
-      )}
+    Materials Needed for this Project
+    {projectMaterials}
     </div>
   )
 
 }
 
 export default MaterialsList;
+/*  <Material materials={props.materials}/>*/

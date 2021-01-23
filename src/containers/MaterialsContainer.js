@@ -8,12 +8,10 @@ import { connect } from 'react-redux'
 
 class MaterialsContainer extends React.Component {
   render() {
-      console.log(this.props.project.materials)
     return (
       <div>
-        Materials Container!
+        <MaterialsList materials={this.props.project && this.props.project.materials}/>
         <MaterialInput project={this.props.project}/>
-        <MaterialsList materials={this.props.project ? this.props.project.materials : this.props}/>
       </div>
     )
   }
