@@ -46,6 +46,8 @@ handleSubmit = (event) => {
             name="cost"
             value={this.state.cost}
             placeholder="Material Cost"
+            pattern="[0-9]"
+            title="Use only numbers"
             onChange={this.handleOnChange}/><br/>
           <label>Quantity Needed</label> {' '}
           <input
@@ -53,6 +55,8 @@ handleSubmit = (event) => {
             name="quantity"
             value={this.state.quantity}
             placeholder="Quantity Needed"
+            pattern="[0-9]"
+            title="Use only numbers"
             onChange={this.handleOnChange} /><br/>
           <input
             type="submit"

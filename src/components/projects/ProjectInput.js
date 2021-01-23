@@ -28,7 +28,7 @@ class ProjectInput extends Component {
   render() {
     return (
       <div>
-        ProjectInput
+        <h3>Create a New Project</h3>
         <form onSubmit={(event) =>this.handleSubmit(event)}>
           <label>Project Name:</label> {'  '}
           <input
@@ -43,7 +43,7 @@ class ProjectInput extends Component {
             value={this.state.description}
             name="description"
             placeholder="Project Description"
-            maxLength="200"
+            maxLength="130"
             onChange={this.handleOnChange}
           />
           <br/>
