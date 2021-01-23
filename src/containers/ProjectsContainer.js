@@ -6,6 +6,7 @@ import {fetchProjects} from '../actions/fetchProjects'
 import {deleteProject} from '../actions/deleteProject'
 import { Route, Switch } from 'react-router-dom'
 import Project from '../components/projects/Project'
+import NavBar from '../components/NavBar'
 
 class ProjectsContainer extends Component {
 
@@ -16,6 +17,7 @@ componentDidMount(){
   render() {
     return(
       <div>
+      <NavBar/>
       <Switch> //chooses the first route that matches the path
         <Route path='/projects/new' component={ProjectInput} />
         <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects} deleteProject={this.props.deleteProject}/>}/>
