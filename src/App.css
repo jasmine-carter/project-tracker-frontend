@@ -10,3 +10,39 @@
   outline:none;
   border: none;
 }
+
+.MaterialsList {
+  display: inline-grid;
+  position: relative;
+  margin: 2rem 5rem;
+  grid-template-columns: auto auto auto;
+}
+
+.Materials {
+  background-color: rgba(255, 255, 255, 0.8);
+ border: 1px solid rgba(0, 0, 0, 0.8);
+ padding: 20px;
+ font-size: 30px;
+ text-align: center;
+}
+
+.materialName {
+  position: relative;
+  text-align: center;
+}
+
+.navBar {
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  overflow: hidden;
+  background-color: #13293d;
+}
+.links {
+  color: #f4c095;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Verdana;
+}
