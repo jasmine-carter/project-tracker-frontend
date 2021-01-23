@@ -5,8 +5,10 @@ const NavBar = (props) => {
 
   return (
     <div class="navBar">
-      <Link to='/projects' class="links"> Projects </Link> {' '}
-      <Link to='/projects/new' class="links"> Add Project</Link>
+      <div class="links">
+      <Link to='/projects' > Projects </Link>
+      <Link to='/projects/new'> Add Project</Link>
+      </div>
     </div>
   )
 }
