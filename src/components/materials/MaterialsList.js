@@ -6,9 +6,9 @@ const MaterialsList = (props) => {
   return (
     <div>
       {props.materials && props.materials.map(material =>
-        <div>
+        <div key={material.id}>
         <ul>
-        <li key={material.id}> {material.name}
+        <li> {material.name}
         <ul>
           <li>Amount needed: {material.quantity}</li>
           <li> Cost per Unit: ${material.cost}</li>
