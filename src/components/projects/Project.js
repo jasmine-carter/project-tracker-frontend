@@ -23,11 +23,14 @@ render() {
 
   return (
     <div>
-      <h3 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h3>
+      <h2 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h2>
       <p>Project Details: {project ? project.description : null} {' '}<br/>
       Project Cost: ${project.cost}<br/>
       Project Completed: {project.completed.toString()} <button class="update-button" onClick={this.handleOnClick}>✓</button></p>
       <button class="delete-button" onClick={this.handleOnDelete}> Delete Project </button>
+      <br/>
+      <br/>
+      <h3>Materials Needed for this Project</h3>
       <MaterialsContainer project={project}/>
     </div>
     )

@@ -8,6 +8,7 @@ import {updateProject} from '../actions/updateProject'
 import { Route, Switch } from 'react-router-dom'
 import Project from '../components/projects/Project'
 import NavBar from '../components/NavBar'
+import Home from '../components/Home'
 
 class ProjectsContainer extends Component {
 
@@ -17,9 +18,9 @@ componentDidMount(){
 
   render() {
     return(
-      <div>
-      <NavBar/>
+      <div class="projectsContainer">
       <Switch> //chooses the first route that matches the path
+        <Route exact path='/' component={Home} />
         <Route path='/projects/new' component={ProjectInput} />
         <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects} deleteProject={this.props.deleteProject} updateProject={this.props.updateProject}/>}/>
         <Route exact path='/projects' render={(routerProps) => <ProjectList projects={this.props.projects}/>}/>

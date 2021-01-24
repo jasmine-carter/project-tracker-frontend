@@ -1,5 +1,5 @@
 .update-button {
-  background: #f4c095;
+  background: #679289;
   border-radius: 50%;
   outline:none;
   border: none;
@@ -9,6 +9,12 @@
   background: #ee2e31;
   outline:none;
   border: none;
+}
+
+.projectCard {
+  margin: 0;
+  position: relative;
+  left: 50%;
 }
 
 .MaterialsList {
@@ -52,4 +58,12 @@
   text-decoration: none;
   color: #f4c095;
   padding: 10px;
+}
+
+.Home {
+  text-align: center;
+  font-family: Verdana;
+}
+.projectsContainer {
+  text-align: center;
 }
