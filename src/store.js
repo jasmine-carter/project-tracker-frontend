@@ -9,8 +9,6 @@ const reducer = combineReducers({
   comments: commentReducer
 })
 
-
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 let store = createStore(projectReducer, composeEnhancers(applyMiddleware(thunk)));
