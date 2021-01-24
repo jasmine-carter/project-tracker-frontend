@@ -6,7 +6,8 @@ class ProjectInput extends Component {
 
   state = {
     name: '',
-    description: ''
+    description: '',
+    image: ''
   }
 
   handleOnChange = (event) => {
@@ -20,7 +21,8 @@ class ProjectInput extends Component {
     this.props.addProject(this.state)
     this.setState({
       name: '',
-      description: ''
+      description: '',
+      image: ''
     })
   }
 
@@ -29,6 +31,7 @@ class ProjectInput extends Component {
     return (
       <div>
         <h3>Create a New Project</h3>
+        <p>Have an awesome project idea and you need to track what to buy? Or maybe you really want to know just how much this quilt has cost you so far to make. Start tracking that by creating a project here!</p>
         <form onSubmit={(event) =>this.handleSubmit(event)}>
           <label>Project Name:</label> {'  '}
           <input
@@ -45,7 +48,15 @@ class ProjectInput extends Component {
             placeholder="Project Description"
             maxLength="130"
             onChange={this.handleOnChange}
-          />
+          /><br/>
+          <label>Inspiration Photo</label>
+          <input
+            typ="text"
+            name="image"
+            placeholder="Inspiration Picture"
+            value={this.state.image}
+            onChange={this.handleOnChange}
+            />
           <br/>
           <br/>
           <input
