@@ -31,7 +31,7 @@ handleSubmit = (event) => {
   render() {
     return (
       <div>
-        Add Material to Your Project
+        <h4 style={{fontFamily: "Verdana"}}>Add A Material to Your Project</h4>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <label>Material Name </label>{' '}
           <input

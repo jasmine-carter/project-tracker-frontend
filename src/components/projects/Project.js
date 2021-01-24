@@ -33,7 +33,7 @@ render() {
       <button class="delete-button" onClick={this.handleOnDelete}> Delete Project </button>
       <br/>
       <br/>
-      <h3>Materials Needed for this Project</h3>
+      <h3 style={{fontFamily: "Verdana"}}>Materials Needed for this Project</h3>
       <MaterialsContainer project={project}/>
     </div>
     )
