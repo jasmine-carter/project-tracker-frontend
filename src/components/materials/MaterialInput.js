@@ -55,7 +55,7 @@ handleSubmit = (event) => {
             name="quantity"
             value={this.state.quantity}
             placeholder="Quantity Needed"
-            pattern="[0-9]"
+            pattern="^[0-9]+$"
             title="Use only numbers"
             onChange={this.handleOnChange} /><br/>
           <input
