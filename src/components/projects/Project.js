@@ -19,11 +19,12 @@ render() {
   //const { project } = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
   //debugger
   let project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
+
   return (
     <div>
       <h2 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h2>
       <div class="landscape">
-        <img src={project.image != null ? project.image : "https://static.vecteezy.com/system/resources/previews/000/163/317/non_2x/doodled-blue-craft-tools-vector.jpg"}/>
+        <img src={project.image != "" ? project.image : "https://static.vecteezy.com/system/resources/previews/000/163/317/non_2x/doodled-blue-craft-tools-vector.jpg"}/>
       </div>
       <p>Project Details: {project ? project.description : null} {' '}<br/>
       Project Cost: ${project.cost}<br/>
