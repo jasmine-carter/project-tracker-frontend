@@ -1,5 +1,4 @@
 export function updateMaterial(projectId, materialId, material) {
-  debugger;
   return(dispatch) => {
     fetch(`http://localhost:3000/api/v1/projects/${projectId}/materials/${materialId}`, {
       headers: {
