@@ -11,8 +11,8 @@ class CommentsContainer extends Component {
     return (
       <div>
         CommentsContainer
-        <CommentInput project={this.props.project}/>
         <CommentList comments={this.props.project.comments}/>
+        <CommentInput project={this.props.project}/>
       </div>
     )
   }
