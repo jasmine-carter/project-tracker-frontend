@@ -1,5 +1,4 @@
 export function addProjectComment(data, project_id){
-
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/projects/${project_id}/comments`, {
       headers: {

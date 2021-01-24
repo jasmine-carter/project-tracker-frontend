@@ -1,6 +1,6 @@
 //responsible for updating the store as it pertains to projects
 
-export default function projectReducer(state = { projects: []}, action) {
+export default function projectReducer(state = { projects: [], comments: []}, action) {
   switch (action.type) {
     //case 'ADD_PROJECT'
 
@@ -63,6 +63,14 @@ export default function projectReducer(state = { projects: []}, action) {
       }
     })
     return {...state, projects: projects4}
+
+    case 'ADD_PROJECT_COMMENT':
+    debugger;
+    const comment = {content: action.payload.content, project_id: action.payload.project_id, id: action.payload.id}
+    return {
+      ...state,
+      comments:[...state.comments, comment]
+    }
 
     default:
     return state;
