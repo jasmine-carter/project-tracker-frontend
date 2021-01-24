@@ -1,7 +1,4 @@
 import React from 'react';
-import {deleteMaterial} from '../../actions/deleteMaterial'
-import {updateMaterial} from '../../actions/updateMaterial'
-import {connect} from 'react-redux'
 
 const Material = (props) => {
 
@@ -32,5 +29,4 @@ return (
   )
 
 }
-export default connect(null,{deleteMaterial, updateMaterial})(Material)
-//<button onClick={() => handleOnClick(props.material.id, props.material.project_id)}> Delete Material </button>
+export default Material;

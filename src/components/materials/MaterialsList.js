@@ -1,20 +1,24 @@
 import React from 'react'
 import Material from './Material'
 
+
+
 //functional component
 const MaterialsList = (props) => {
 
   const {materials} = props
   const projectMaterials = materials.map(material => {
     return(
-      <div class="Material"><Material
+      <div className="Material" key={material.id}><Material
       key={material.id}
       material = {material}
+      deleteMaterial={props.deleteMaterial}
+      updateMaterial={props.updateMaterial}
       />
       </div>
     )
   })
-  console.log(projectMaterials.length)
+
   return (
     <div style={{background: "#ffdaae"}}>
     <div class="MaterialsList">
