@@ -1,6 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {addProjectComment} from '../../actions/addProjectComment'
 
 class CommentInput extends React.Component {
 
@@ -16,6 +14,7 @@ class CommentInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(this.props)
     this.props.addProjectComment(this.state, this.props.project.id)
   }
 
@@ -41,4 +40,4 @@ class CommentInput extends React.Component {
 
 }
 
-export default connect(null, {addProjectComment})(CommentInput);
+export default CommentInput;
