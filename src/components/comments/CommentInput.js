@@ -22,18 +22,18 @@ class CommentInput extends React.Component {
   render() {
     return (
       <div>
-      <h4 style={{fontFamily: "Verdana"}}>Notes about this project</h4>
+      <h4 style={{fontFamily: "Verdana"}}>Add notes about this project</h4>
       <form onSubmit={(event) =>this.handleSubmit(event)}>
-      <label>Note</label>
+      <label>Note</label>{' '}
       <input
         type="text"
         name="content"
         value={this.state.content}
         placeholder="Project Notes"
-        onChange={this.handleOnChange}/>
+        onChange={this.handleOnChange}/>{' '}
       <input
         type="submit"
-        value="Add Project Comment" />
+        value="Add Project Note" />
       </form>
       </div>
     )
