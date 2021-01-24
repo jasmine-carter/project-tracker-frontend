@@ -85,3 +85,9 @@
 .projectsContainer {
   text-align: center;
 }
+
+.landscape {
+  width: auto;
+  height: 400px;
+  overflow: hidden;
+}
