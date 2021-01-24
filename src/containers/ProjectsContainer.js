@@ -7,7 +7,6 @@ import {deleteProject} from '../actions/deleteProject'
 import {updateProject} from '../actions/updateProject'
 import { Route, Switch } from 'react-router-dom'
 import Project from '../components/projects/Project'
-import NavBar from '../components/NavBar'
 import Home from '../components/Home'
 
 class ProjectsContainer extends Component {
