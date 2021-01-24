@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import MaterialsContainer from '../../containers/MaterialsContainer'
+import CommentsContainer from '../../containers/CommentsContainer'
+
 class Project extends Component {
 
 
@@ -22,7 +24,7 @@ render() {
 
   return (
     <div>
-      <h2 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h2>
+      <h1 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h1>
       <div class="landscape">
         <img src={project.image != "" ? project.image : "https://static.vecteezy.com/system/resources/previews/000/163/317/non_2x/doodled-blue-craft-tools-vector.jpg"}/>
       </div>
@@ -34,6 +36,7 @@ render() {
       <br/>
       <h3 style={{fontFamily: "Verdana"}}>Materials Needed for this Project</h3>
       <MaterialsContainer project={project}/>
+      <CommentsContainer />
     </div>
     )
   }
