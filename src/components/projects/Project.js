@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import MaterialsContainer from '../../containers/MaterialsContainer'
-
 class Project extends Component {
 
 
   handleOnDelete = ()=> {
     let projectId = this.props.match.params.id
-  this.props.deleteProject(projectId)
+    this.props.deleteProject(projectId)
+    this.props.history.push('/projects')
 
   }
 
   handleOnClick = () => {
     let project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
-    console.log(project)
     this.props.updateProject(project.id, project)
   }
 render() {
@@ -20,7 +19,6 @@ render() {
   //const { project } = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
   //debugger
   let project = this.props.projects.filter(project => project.id == this.props.match.params.id)[0]
-  console.log(project.image == null)
   return (
     <div>
       <h2 id={project ? project.id : "none"}> {project ? project.name : "There's no Project here"} </h2>

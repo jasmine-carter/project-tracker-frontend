@@ -7,10 +7,9 @@ export default function projectReducer(state = { projects: []}, action) {
     case 'FETCH_PROJECTS':
     //debugger;
     return { projects: action.payload }
-    //case 'DELETE_PROJECT'
 
     case 'ADD_PROJECT':
-   // debugger;
+   debugger;
     return {
     ...state,
     projects: [...state.projects, action.payload]
@@ -28,7 +27,7 @@ export default function projectReducer(state = { projects: []}, action) {
     return {...state, projects: projects3}
 
     case 'DELETE_PROJECT':
-    ///debugger;
+    //debugger;
     let projects = state.projects.filter(project => project.id !== parseInt(action.payload))
     return {...state, projects}
 
@@ -55,7 +54,7 @@ export default function projectReducer(state = { projects: []}, action) {
     return {...state, projects: projects2}
 
     case 'UPDATE_PROJECT_MATERIAL':
-    debugger;
+    //debugger;
     let projects4 = state.projects.map(project => {
       if (project.id === action.payload.id) {
         return action.payload
