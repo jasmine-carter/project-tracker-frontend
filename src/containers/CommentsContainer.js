@@ -2,27 +2,32 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import CommentInput from '../components/comments/CommentInput'
 import CommentList from '../components/comments/CommentList'
-import {addProjectComment} from '../actions/addProjectComment'
+import {fetchProjectComments} from '../actions/fetchProjectComments'
 
 class CommentsContainer extends Component {
 
+  componentDidMount(){
+    this.props.fetchProjectComments(this.props.project.id)
+    console.log("component mounted")
+  }
 
   render() {
-    console.log(this.props)
-    debugger;
+
+
     return (
       <div>
-        CommentsContainer
-        <CommentList comments={this.props.comments} project={this.props.project}/>
+        <CommentList comments={this.props.comments.comments} project={this.props.project}/>
         <CommentInput project={this.props.project} addProjectComment={this.props.addProjectComment}/>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({comments}) => {
-    return {comments}
-}
+  const mapStateToProps = state => {
+    return {
+      comments: state.comments
+    }
+  }
 
 
-export default connect(mapStateToProps, {addProjectComment})(CommentsContainer);
+export default connect(mapStateToProps, {fetchProjectComments})(CommentsContainer);

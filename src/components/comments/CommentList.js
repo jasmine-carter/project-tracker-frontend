@@ -6,7 +6,7 @@ const CommentList = (props) => {
   const {comments} = props
 
   return(
-    <div>
+    <div class="CommentList">
       <ul>
       <h3>Project Notes</h3>
         {props.comments.length >= 1 && props.comments.map(comment =>
