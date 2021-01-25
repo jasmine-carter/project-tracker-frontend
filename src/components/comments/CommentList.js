@@ -5,21 +5,15 @@ const CommentList = (props) => {
 
   const {comments} = props
 
-  const projectComments = comments.map(comment => {
-    return(
-      <div class="Comment" key={comment.id}><li><Comment
-      key={comment.id}
-      comment = {comment}
-      /></li>
-      </div>
-    )
-  })
-
   return(
     <div>
       <ul>
       <h3>Project Notes</h3>
-      {projectComments.length > 0 ? projectComments : "There aren't any notes about this project yet."}
+        {props.comments.length >= 1 && props.comments.map(comment =>
+          <li class="Comment" key={comment.id}><Comment
+            key={comment.id}
+              comment = {comment}
+          /></li>)}
       </ul>
     </div>
   )
