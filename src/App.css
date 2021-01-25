@@ -24,6 +24,30 @@
   font-weight: 800;
 }
 
+.delete-comment-button {
+  background: #ee2e31;
+  font-weight: 800;
+  border-radius: 60%;
+  outline:none;
+  border: none;
+}
+
+.delete-comment-button:hover{
+  background-color: #d21114;
+  font-weight: 800;
+}
+.projectsContainer {
+  font-family: Verdana;
+  align-content: center;
+}
+
+.projectsContainer ul {
+  list-style-type: none;
+  padding-left: 0;
+  width: auto;
+  text-align: center;
+}
+
 .projectCard {
   margin: 0;
   position: relative;
@@ -88,6 +112,11 @@
 
 .landscape {
   width: auto;
-  height: 400px;
+  height:400px;
   overflow: hidden;
+}
+
+.CommentList ul {
+  background: #cbdad6;
+  list-style-type: circle;
 }
