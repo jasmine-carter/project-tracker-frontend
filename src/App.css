@@ -11,11 +11,12 @@
   font-weight: 1000;
 }
 .delete-button {
-  background: #ee2e31;
+  background: #071e22;
   width: 120px;
   height: 30px;
   outline:none;
   border: none;
+  color: white;
   font-weight: 400;
 }
 
