@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+## SetUp
+
+* Run 'npm install' to install all the dependencies for react
+* Run 'bundle install' to install all of the Ruby Gems required
+* Run 'db:migrate' to get some seed data
+* Run 'rails s' to start rails server
+* Run 'npm start' to start the react server and see front end
+
+
 ## Available Scripts
 
 In the project directory, you can run:
