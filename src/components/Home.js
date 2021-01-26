@@ -9,7 +9,7 @@ const Home = (props) => {
     Here you can create the project you want to keep tabs on, add materials and the quantities that you know you need to get for it, and track if you've purchased said materials.
     All while seeing how much your project has cost!</p>
     </div>
-      <img src="https://i2.wp.com/elocreations.com/wp-content/uploads/2020/07/IMG_7607-1.jpg?resize=768%2C1024&ssl=1"/>
+      <img src="https://i2.wp.com/elocreations.com/wp-content/uploads/2020/07/IMG_7607-1.jpg?resize=768%2C1024&ssl=1" alt="Decorate Wall Art"/>
     </div>
   )
 }
