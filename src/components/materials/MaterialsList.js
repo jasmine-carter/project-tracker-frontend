@@ -34,7 +34,6 @@ function whatRenders(){
     <div style={{background: "#ffdaae"}}>
     <div class="MaterialsList">
     {whatRenders()}
-    {console.log(whatRenders())}
     </div>
     </div>
   )
