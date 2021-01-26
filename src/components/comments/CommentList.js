@@ -12,7 +12,8 @@ const CommentList = (props) => {
         {props.comments.length >= 1 && props.comments.map(comment =>
           <li class="Comment" key={comment.id}><Comment
             key={comment.id}
-              comment = {comment}
+            comment = {comment}
+            deleteComment={props.deleteComment}
           /></li>)}
       </ul>
     </div>
