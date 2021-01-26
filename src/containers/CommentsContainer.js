@@ -17,6 +17,7 @@ class CommentsContainer extends Component {
   }
 
   render() {
+    console.log(`CommentsContainer mounted ${this.props.project == undefined}`)
     return (
       <div>
         <CommentList comments={this.props.comments.comments} project={this.props.project} deleteComment={this.props.deleteComment}/>
