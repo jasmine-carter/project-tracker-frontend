@@ -1,7 +1,9 @@
 import React from 'react';
+import {addProjectComment} from '../../actions/addProjectComment'
+import {connect} from 'react-redux'
 
 class CommentInput extends React.Component {
-
+//E6 syntax tada
   state = {
     content: ''
   }
@@ -16,6 +18,9 @@ class CommentInput extends React.Component {
     event.preventDefault();
     console.log(this.props)
     this.props.addProjectComment(this.state, this.props.project.id)
+    this.setState({
+      content: ''
+    })
   }
 
   render() {
@@ -40,4 +45,4 @@ class CommentInput extends React.Component {
 
 }
 
-export default CommentInput;
+export default connect(null, {addProjectComment})(CommentInput);
