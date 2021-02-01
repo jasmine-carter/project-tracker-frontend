@@ -26,7 +26,7 @@ class ProjectInput extends Component {
       description: '',
       image: ''
     })
-    this.props.history.push('/projects') //load newly created project page instead/
+  //  this.props.history.push('/projects') //load newly created project page instead/
   }
 
 
