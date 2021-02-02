@@ -13,6 +13,7 @@ class ProjectsContainer extends Component {
   constructor(props) {
     super()
     this.state = {
+      projects_sorted: false,
       projects: []
     }}
 
@@ -20,16 +21,8 @@ componentDidMount(){
   this.props.fetchProjects()
 }
 
-componentDidUpdate(prevProps, previousState){ //using componentDidUpdate to
-  if (this.props.projects.length != prevProps.projects.length) {
-    this.setState({
-      projects: this.props.projects
-    })
-  }
-}
-
 sortProjects = () => {
-  let projects = this.state.projects
+  let projects = [...this.props.projects]
     projects.sort(function(a,b) {
     let nameA = a.name.toLowerCase()
     let nameB = b.name.toLowerCase()
@@ -42,22 +35,33 @@ sortProjects = () => {
     return 0;
   });
   this.setState({
-    projects: projects
+    projects: projects,
+    projects_sorted: true
   })
+  console.log("this is the state")
   console.log(this.state)
+  console.log("these are props")
   console.log(this.props)
 }
 
   render() {
+    let listedProjects
+
+    if (this.state.projects_sorted == false) {
+      listedProjects = this.props.projects
+    } else {
+      listedProjects = this.state.projects
+    }
+
+
     //console.log(`ProjectsContainer mounted ${this.props == undefined}`)
-    console.log(this.state)
     return(
       <div class="projectsContainer">
       <Switch> //chooses the first route that matches the path
         <Route exact path='/' component={Home} />
         <Route path='/projects/new' component={ProjectInput} />
         <Route path='/projects/:id' render={(routerProps) => <Project {...routerProps} projects={this.props.projects} deleteProject={this.props.deleteProject} updateProject={this.props.updateProject}/>}/>
-        <Route exact path='/projects' render={(routerProps) => <ProjectList projects={this.state.projects} sortProjects={this.sortProjects}/>}/>
+        <Route exact path='/projects' render={(routerProps) => <ProjectList projects={listedProjects} sortProjects={this.sortProjects}/>}/>
       </Switch>
       </div>
     )
